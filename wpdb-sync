@@ -6,8 +6,8 @@ require 'paint'
 require 'fileutils'
 require 'json'
 
-require_relative "wpdb-sync/util"
-require_relative "wpdb-sync/tasks"
+require_relative "src/util"
+require_relative "src/tasks"
 
 if ARGV[0]=="help"
   help
