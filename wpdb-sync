@@ -16,13 +16,12 @@ end
 if ARGV[0]=="new"
   site = ARGV[1]
   root = ARGV[2]
+
   development = ARGV[3]
-  staging = ARGV[4]
-  production = ARGV[5]
+  staging     = ARGV[4]
+  production  = ARGV[5]
 
   newSite site, root, development, staging, production
-
-  exit true
 end
 
 if !(ARGV[0] && ARGV[1] && ARGV[2])

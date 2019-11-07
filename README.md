@@ -2,29 +2,24 @@
 
 ## Install
 
-Clone to `bin`, alias it, whatever you want. Doesn't need to be in your sites/web dir. Just terminal accessible.
+Clone to `bin`, alias it, whatever you want. Doesn't need to be in your site dir.
 
-## Examples
+Give permission to run as an executable: `chmod u+x` on the `wpdb-sync` file in the project root.
 
-Create a new site like so:
+## Signature and Usage
 
-```
-./bin/wpdb-sync new site.com /Users/username/sites/site.com http://site.vagrant https://staging.site.com https://site.com
-```
+First, add a site to the wpdb-sync config (`~/.config/wpdb-sync`) using `wpdb-sync new`. You can add as many sites as you like by running `wpdb-sync new` multiple times.
 
-Now you can run commands like:
-
-```
-./bin/wpdb-sync site.com development staging`
+```shell
+wpdb-sync new {host} {site_root} {development} {staging} {production}
 ```
 
-## Signature
+Now, you can push and pull the database between environments:
 
-```
-wpdb-sync new [host] [site_root] [development] [staging] [production]
-```
-
-```
-wpdb-sync [host] [pull] [push]
+```shell
+wpdb-sync {host} {origin} {destination}
 ```
 
+## Assumptions
+
+- You already have `wp-cli` aliases set up and you use the following naming convention: `@development`, `@staging`, `@production`.
